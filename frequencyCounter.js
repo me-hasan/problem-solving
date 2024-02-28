@@ -14,6 +14,12 @@
 // }
 
 
+/**
+ * same two array are same
+ * @param {*} arr1 
+ * @param {*} arr2 
+ * @returns 
+ */
 
 function anotherWaySame(arr1, arr2){
     let frequencyCounter1 = {};

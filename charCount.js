@@ -1,3 +1,9 @@
+/**
+ * Count character form string
+ * @param {*} strm 
+ * @returns 
+ */
+
 function charCount(strm){
     var result = {};
 
