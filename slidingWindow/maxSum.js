@@ -18,4 +18,4 @@ function maxSubArrSum(arr, num){
 }
 
 
-console.log(maxSubArrSum([2,3,4,6,12], 3));
+console.log(maxSubArrSum([2,3,4,6,1, 23], 3));
