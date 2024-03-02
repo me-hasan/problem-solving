@@ -18,4 +18,5 @@ function maxSubArrSum(arr, num){
 }
 
 
-console.log(maxSubArrSum([2,3,4,6,1, 23], 3));
+console.log(maxSubArrSum([2,3,4,6,1, 23], 3)); // 30
+console.log(maxSubArrSum([100,200,300,400], 2)); // 700
