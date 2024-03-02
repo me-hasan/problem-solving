@@ -20,9 +20,9 @@ function validAnagram(str1, str2){
     for(let char of str2){
         frequencyCounter2[char] = (frequencyCounter2[char] || 0) + 1;
     }
-
+    
     for(let key in frequencyCounter1){
-        if(!(key in frequencyCounter2)){
+        if(!(key in frequencyCounter2)){ // check frequencyCounter1's keys are exist or not in frequencyCounter2's keys
             return false;
         }
 
@@ -32,12 +32,13 @@ function validAnagram(str1, str2){
 
     }
 
-    console.log(frequencyCounter1);
-    console.log(frequencyCounter2);
 
     return true;
     
     
   }
 
-  validAnagram('dfdfs', 'dfdsf');
+  console.log(validAnagram('dfdfs', 'dfdsf')); // true
+  console.log(validAnagram('dfdfs', 'sfddf')); // true
+  console.log(validAnagram('dfdfs', 'sdddf')); // false 
+  console.log(validAnagram('dfdfs', 'sssddf')); // false 
