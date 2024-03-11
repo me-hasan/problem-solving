@@ -2,6 +2,7 @@ function maxSubArraySum(arr, num){
     let maxSum = 0;
     let tempSum = 0;
 
+    
     if(num > arr.length) null;
 
     for (let i = 0; i < num; i++){
@@ -18,5 +19,6 @@ function maxSubArraySum(arr, num){
 
     return maxSum;
 }
+
 
 console.log(maxSubArraySum([2,3,4,6,1, 23], 3));
