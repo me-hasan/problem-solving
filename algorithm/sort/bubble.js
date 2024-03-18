@@ -1,14 +1,17 @@
 function bubbleShort(arr){
-    var noSwap ;
-    for (let i = arr.length; i > 0; i--){
-        noSwap = true
-        for (let j = 0; j < i - 1; j++){
-            console.log(arr, arr[j], arr[j+1]);
+    const swap = (a, b)=> 
+    ([arr[b], arr[a]] = [arr[a], arr[b]]);
+
+    var noSwap;
+    for (let i = 0; i < arr.length; i++){
+        noSwap = true;
+        for (let j = 0; j < arr.length - 1 - i; j++){
             if(arr[j] > arr[j+1]){
-                var temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
-                noSwap = false
+               
+
+                swap(j, j+1)
+                noSwap = false;
+
             }
         }
         if(noSwap) break;
@@ -17,6 +20,6 @@ function bubbleShort(arr){
 }
 
 
-var resutl = bubbleShort([2,5,1, 8,4, -8]);
+var resutl = bubbleShort([2,5,1, 8,4, -3]);
 
 console.log(resutl)
