@@ -100,6 +100,17 @@ class SinglyLinkedList{
         this.length ++;
         return true;
     }
+
+    removed(index){
+        if(index < 0 || index >= this.length) return undefined;
+        if(index === 0) return this.shift();
+        if(index == this.length -1) return this.pop();
+        var prev = this.get(index -1);
+        var remove = this.get(index);
+        prev.next = remove.next;
+        this.length --;
+        return remove;
+    }
 }
 
 
@@ -124,8 +135,9 @@ list.push('Khayrul');
 // var result = list.get(3)
 // var result = list.set(1, 'Women')
 
-var result = list.insert(4, 'Lady');
+// var result = list.insert(4, 'Lady');
 
+result = list.removed(3);
 
 console.log(list)
 console.log(result)
