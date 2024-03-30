@@ -76,7 +76,16 @@ class SinglyLinkedList{
             current = current.next;
             count ++;
         }
-        return current.val;
+        return current;
+    }
+
+    set(index, val){
+        var foundNode = this.get(index);
+        if(foundNode){
+            foundNode.val = val;
+            return true; 
+        }
+        return false;
     }
 }
 
@@ -99,9 +108,10 @@ list.push('Khayrul');
 // list.unshift("Jumu");
 // list.unshift("Ibnat");
 
-var result = list.get(3)
+// var result = list.get(3)
+var result = list.set(1, 'Women')
 
 
 
-// console.log(list)
+console.log(list)
 console.log(result)
