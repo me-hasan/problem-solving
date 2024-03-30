@@ -87,6 +87,19 @@ class SinglyLinkedList{
         }
         return false;
     }
+
+    insert(index, val){
+        if(index < 0 || index > this.length) return false;
+        if(index === 0) return !!this.unshift(val);
+        if(index === this.length) return !!this.push(val);
+        var prev = this.get(index - 1);
+        var temp = this.get(index);
+        var newNode = new Node(val);
+        prev.next = newNode;
+        newNode.next = temp;
+        this.length ++;
+        return true;
+    }
 }
 
 
@@ -109,8 +122,9 @@ list.push('Khayrul');
 // list.unshift("Ibnat");
 
 // var result = list.get(3)
-var result = list.set(1, 'Women')
+// var result = list.set(1, 'Women')
 
+var result = list.insert(4, 'Lady');
 
 
 console.log(list)
