@@ -50,9 +50,22 @@ class SinglyLinkedList{
         this.head = currntHead.next;
         this.length --;
         if(this.length === 0){
-            this.tail = null
+            this.tail = null    
         }
         return currntHead;
+    }
+
+    unshift(val){
+        var newNode  = new Node(val);
+        if(!this.head){
+            this.head = newNode;
+            this.tail = this.head;
+        }else{
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length ++;
+        return this;
     }
 }
 
@@ -62,13 +75,19 @@ list.push('Hello');
 list.push('Man');
 list.push('Man1');
 list.push('Khayrul');
+
 // list.pop();
 // list.pop();
 // list.pop();
-list.shift()
-list.shift()
-list.shift()
-list.shift()
+
+// list.shift()
+// list.shift()
+// list.shift()
+// list.shift()
+
+list.unshift("Jumu");
+list.unshift("Ibnat");
+
 
 
 console.log(list)
