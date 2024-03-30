@@ -43,6 +43,14 @@ class SinglyLinkedList{
             }
             return current;
     }
+
+    shift(){
+        if(!this.head) return undefined;
+        var currntHead = this.head;
+        this.head = currntHead.next;
+        this.length --;
+        return currntHead;
+    }
 }
 
 
@@ -51,9 +59,11 @@ list.push('Hello');
 list.push('Man');
 list.push('Man1');
 list.push('Khayrul');
-list.pop();
-list.pop();
-list.pop();
+// list.pop();
+// list.pop();
+// list.pop();
+list.shift()
+list.shift()
 
 
 console.log(list)
