@@ -49,6 +49,9 @@ class SinglyLinkedList{
         var currntHead = this.head;
         this.head = currntHead.next;
         this.length --;
+        if(this.length === 0){
+            this.tail = null
+        }
         return currntHead;
     }
 }
@@ -62,6 +65,8 @@ list.push('Khayrul');
 // list.pop();
 // list.pop();
 // list.pop();
+list.shift()
+list.shift()
 list.shift()
 list.shift()
 
