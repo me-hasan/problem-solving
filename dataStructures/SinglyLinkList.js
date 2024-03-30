@@ -67,6 +67,17 @@ class SinglyLinkedList{
         this.length ++;
         return this;
     }
+
+    get(index){
+        if(index < 0 || index >= this.length) return undefined;
+        var count = 0;
+        var current = this.head;
+        while(index !== count){
+            current = current.next;
+            count ++;
+        }
+        return current.val;
+    }
 }
 
 
@@ -85,9 +96,12 @@ list.push('Khayrul');
 // list.shift()
 // list.shift()
 
-list.unshift("Jumu");
-list.unshift("Ibnat");
+// list.unshift("Jumu");
+// list.unshift("Ibnat");
+
+var result = list.get(3)
 
 
 
-console.log(list)
+// console.log(list)
+console.log(result)
