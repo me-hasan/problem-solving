@@ -113,20 +113,17 @@ class SinglyLinkedList{
     }
 
     reverse(){
-        var node = this.head;
-        this.head = this.tail;
-        this.tail = node;
-
-        var next;
         var prev = null;
-
-        for(var i = 0; i < this.length; i++){
-            next = node.next;
-            node.next = prev; 
-            prev = node;
-            node = next
+        var current = this.head;
+        while(current != null){
+            var next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
         }
-
+        this.head = prev; // set the head to the new first node after reversal
+        this.tail = this.head; // set the tail to the new last node, which is the old head
+        return this; // Don't forget to return the reversed list
     }
 
 
