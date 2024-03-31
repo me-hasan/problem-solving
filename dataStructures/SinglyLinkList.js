@@ -111,14 +111,42 @@ class SinglyLinkedList{
         this.length --;
         return remove;
     }
+
+    reverse(){
+        var node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+
+        var next;
+        var prev = null;
+
+        for(var i = 0; i < this.length; i++){
+            next = node.next;
+            node.next = prev; 
+            prev = node;
+            node = next
+        }
+
+    }
+
+
+    print(){
+        var arr = [];
+        var current = this.head;
+        while(current){
+            arr.push(current.val);
+            current = current.next;
+        }
+        console.log(arr);
+    }
 }
 
 
 var list = new SinglyLinkedList();
-list.push('Hello');
-list.push('Man');
-list.push('Man1');
-list.push('Khayrul');
+list.push(100);
+list.push(200);
+list.push(300);
+list.push(400);
 
 // list.pop();
 // list.pop();
@@ -137,7 +165,10 @@ list.push('Khayrul');
 
 // var result = list.insert(4, 'Lady');
 
-result = list.removed(3);
+// result = list.removed(3);
 
-console.log(list)
-console.log(result)
+result = list.reverse();
+list.print()
+
+// console.log(list)
+// console.log(result)
