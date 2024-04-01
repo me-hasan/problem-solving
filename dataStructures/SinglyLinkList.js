@@ -123,7 +123,7 @@ class SinglyLinkedList{
         }
         this.head = prev; // set the head to the new first node after reversal
         this.tail = this.head; // set the tail to the new last node, which is the old head
-        return this; // Don't forget to return the reversed list
+        return this; 
     }
 
 
