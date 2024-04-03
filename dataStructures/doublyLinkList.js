@@ -71,6 +71,28 @@ class DoublyLinkList {
         this.length ++;
         return this;
     }
+
+    get(index){
+        if(index < 0 || index >= this.length) return undefined;
+        var count, current;
+        if(index <= this.length/2){
+            count = 0;
+            current = this.head;
+            while(index !== count){
+                current = current.next;
+                count ++;
+            }
+            return current;
+        }else{
+            count = this.length - 1;
+            current = this.tail;
+            while(index !== count){
+                current = current.prev;
+                count --;
+            }
+            return current;
+        }
+    }
 }
 
 var list = new DoublyLinkList();
@@ -80,5 +102,6 @@ list.push(80);
 list.push(70);
 list.unshift(12)
 
-console.log(list)
+
+console.log(list.get(0))
 
