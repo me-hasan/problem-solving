@@ -27,11 +27,27 @@ class DoublyLinkList {
         this.length++;
         return this
     } 
+
+    pop(){
+        if(!this.head) return undefined;
+        var currentTail = this.tail;
+        if(this.length === 1){
+            this.head = null;
+            this.tail = null;
+        }else{
+            this.tail = currentTail.prev;
+            this.tail.next = null;
+        }
+        this.length --;
+        return currentTail;
+    }
 }
 
 var list = new DoublyLinkList();
 list.push(100);
 list.push(90);
+list.push(70);
+list.pop()
 
 console.log(list)
 
