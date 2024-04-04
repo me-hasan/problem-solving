@@ -102,6 +102,24 @@ class DoublyLinkList {
         }
         return false;
     }
+
+
+    insert(index, val){
+        if(index < 0 || index >= this.length) return false;
+        if(index === 0) return this.unshift(val);
+        if(index === this.length) return this.push(val);
+
+        var newNode = new Node(val);
+        var beforNode = this.get(index-1);
+        var afterNode = beforNode.next;
+        beforNode.next = newNode;
+        newNode.prev = beforNode;
+        afterNode.prev = newNode;
+        newNode.next = afterNode;
+        this.length ++;
+        return true; 
+
+    }
 }
 
 var list = new DoublyLinkList();
@@ -110,7 +128,10 @@ list.push(90);
 list.push(80);
 list.push(70);
 list.unshift(12)
+list.set(2, 300)
+list.insert(1, 50)
 
 
-console.log(list.get(0))
+
+console.log(list)
 
