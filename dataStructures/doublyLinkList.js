@@ -118,7 +118,22 @@ class DoublyLinkList {
         newNode.next = afterNode;
         this.length ++;
         return true; 
+    }
 
+    remove(index){
+        if(index < 0 || index >= this.length) return undefined;
+        if(index === 0) return this.shift();
+        if(index === this.length-1) return this.push();
+
+        var removeNode = this.get(index);
+        var beforNode = removeNode.prev;
+        var afterNode = removeNode.next;
+        beforNode.next = afterNode;
+        afterNode.prev = beforNode;
+        removeNode.next = null;
+        removeNode.prev = null;
+        this.length --;
+        return removeNode;
     }
 }
 
@@ -127,11 +142,12 @@ list.push(100);
 list.push(90);
 list.push(80);
 list.push(70);
-list.unshift(12)
-list.set(2, 300)
-list.insert(1, 50)
+// list.unshift(12)
+// list.set(2, 300)
+// list.insert(1, 50)
+list.remove(1)
 
 
 
-console.log(list)
+console.log(list.get(1))
 
