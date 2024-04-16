@@ -1,5 +1,5 @@
 function areThereDuplicates(...args) {
-    const str = args;
+    const str = args.join('');
     let lookup = {};
 
      for(let chr of str){
@@ -13,3 +13,7 @@ function areThereDuplicates(...args) {
      return false
 
 }
+
+var result = areThereDuplicates('sdetye');
+
+console.log(result);
